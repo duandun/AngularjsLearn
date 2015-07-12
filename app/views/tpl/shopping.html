@@ -5,6 +5,18 @@
 	<input type="text" ng-model='item.quantity'>
 	<span>{{item.price | currency}}</span>
 	<span>{{item.price * item.quantity | currency}}</span>
-	<button ng-click="remove($index)">Remove</button>
+	<button class="btn btn-default" ng-click="remove($index)">Remove</button>
 </div>
+
+<div>
+	Total: {{totalCart() | currency}}
+</div>
+<div>Discount: {{bill.discount | currency}}</div>
+<div>Subtotal: {{subtotal() | currency}}</div>
+
+<form ng-submit="requestFunding()">
+	Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate" >
+	Recommendation: {{needed}}
+	<button class="btn btn-default" ng-click="needed=0; startingEstimate=0">Reset</button>
+</form>
 
