@@ -12,7 +12,11 @@ function CartController($scope, Items) {
 	// 	{title: 'Pepper pants', quantity: 4, price: 7.36},
 	// 	{title: 'Dancing fance', quantity: 7, price: 4.86}
 	// ];
-
+	// $scope.$filter('greet', function() {
+	// 	return function(name) {
+	// 		return 'Hellow' + name;
+	// 	};
+	// });
 	$scope.items = Items.query();
 
 	$scope.remove = function(index) {

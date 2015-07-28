@@ -56,3 +56,10 @@ app.directive('draggable', function ($document) {
       }
     };
 });
+
+app.filter('greet', function() {
+  return function(name) {
+
+    return 'Hello ' + name;
+  };
+});
